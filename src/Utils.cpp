@@ -68,11 +68,11 @@ bool ImportCell0Ds(PolygonalMesh& mesh)
         /// Memorizza i marker
         if(marker != 0)
         {
-           auto it = mesh.MarkerCell0Ds.find(marker);
-           if(it == mesh.MarkerCell0Ds.end()){
+           auto itor = mesh.MarkerCell0Ds.find(marker);
+           if(itor == mesh.MarkerCell0Ds.end()){
             mesh.MarkerCell0Ds.insert({marker, {id}});
            } else {
-            it->second.push_back(id);
+            itor->second.push_back(id);
            }
         }
 
@@ -124,15 +124,15 @@ bool ImportCell1Ds(PolygonalMesh& mesh)
         /// Memorizza i marker
         if(marker != 0)
         {
-            const auto it = mesh.MarkerCell1Ds.find(marker);
-            if(it == mesh.MarkerCell1Ds.end())
+            const auto itor = mesh.MarkerCell1Ds.find(marker);
+            if(itor == mesh.MarkerCell1Ds.end())
             {
                 mesh.MarkerCell1Ds.insert({marker, {id}});
             }
             else
             {
                 // mesh.MarkerCell1Ds[marker].push_back(id);
-                it->second.push_back(id);
+                itor->second.push_back(id);
             }
         }
     }
@@ -215,15 +215,15 @@ bool ImportCell2Ds(PolygonalMesh& mesh)
         /// Memorizza i marker
         if(marker != 0)
         {
-            const auto it = mesh.MarkerCell2Ds.find(marker);
-            if(it == mesh.MarkerCell2Ds.end())
+            const auto itor = mesh.MarkerCell2Ds.find(marker);
+            if(itor == mesh.MarkerCell2Ds.end())
             {
                 mesh.MarkerCell2Ds.insert({marker, {id}});
             }
             else
             {
                 // mesh.MarkerCell1Ds[marker].push_back(id);
-                it->second.push_back(id);
+                itor->second.push_back(id);
             }
         }
     }
